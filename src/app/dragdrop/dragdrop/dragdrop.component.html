@@ -1,0 +1,18 @@
+<div class="div1" 
+[appDrag]="true"
+[dragTag]="'div1'"
+[dragData]="item"
+[draggedClass]="'drag-start'"
+
+
+appDrop
+[dropTags]="['div1','div2']"
+[dragEnterClass]="'drag-enter'"
+
+(dropped)="handleMove($event,'拖拽的数据')"
+
+[dragEnterClass]="'drag-enter'"
+></div> <!--注意要加两个''-->
+
+
+
