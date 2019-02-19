@@ -11,6 +11,7 @@ import { Animations03Component } from './animations03/animations03.component';
 import { DragdropModule } from './dragdrop/dragdrop/dragdrop.module';
 import { DragDirective } from './directive/dragdrop/drag.directive';
 import { DropDirective } from './directive/dragdrop/drop.directive';
+import { DirectiveModule } from './directive/dragdrop/directive.module';
 
 @NgModule({
   declarations: [ //指令,组件
@@ -18,15 +19,16 @@ import { DropDirective } from './directive/dragdrop/drop.directive';
     Animations01Component,
     Animations02Component,
     Animations03Component,
-    DragDirective,
-    DropDirective
+    // DragDirective,
+    // DropDirective
   ],
   imports: [ //模块
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NoopAnimationsModule  ,
-    DragdropModule  
+    DragdropModule  ,
+    DirectiveModule
   ],
   providers: [],//服务
   bootstrap: [AppComponent]//主组件

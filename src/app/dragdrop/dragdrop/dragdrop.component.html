@@ -1,18 +1,82 @@
+
+<div *ngFor="let item of items; let i=index" class={{item}} 
+[appDrag]="true"
+[dragTag]="item"
+[dragData]="item"
+[draggedClass]="'drag-start'"
+
+
+appDrop
+[dropTags]="items" 
+[dragEnterClass]="'drag-enter'" 
+(dropped)="handleMove($event,item,i)"
+
+>{{item}}</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
 <div class="div1" 
 [appDrag]="true"
 [dragTag]="'div1'"
 [dragData]="item"
 [draggedClass]="'drag-start'"
 
-
+ 
 appDrop
-[dropTags]="['div1','div2']"
-[dragEnterClass]="'drag-enter'"
-
+[dropTags]="['div1','div2','div3']" 
+[dragEnterClass]="'drag-enter'" 
 (dropped)="handleMove($event,'拖拽的数据')"
 
-[dragEnterClass]="'drag-enter'"
-></div> <!--注意要加两个''-->
+
+></div> 
+<p>------</p>
+
+<div class="div2"
+[appDrag]="true"
+[dragTag]="'div2'"
+[dragData]="item"
+[draggedClass]="'drag-start'"
+
+ 
+appDrop
+[dropTags]="['div1','div2','div3']" 
+[dragEnterClass]="'drag-enter'" 
+(dropped)="handleMove($event,'拖拽的数据')"
+></div>
+
+<p>------</p>
+
+
+<div class="div3"
+[appDrag]="true"
+[dragTag]="'div3'"
+[dragData]="item"
+[draggedClass]="'drag-start'"
+
+ 
+appDrop
+[dropTags]="['div1','div2','div3']" 
+[dragEnterClass]="'drag-enter'" 
+(dropped)="handleMove($event,'拖拽的数据')"
+></div>
+
+
+
+-->
+
+
+
+
 
 
 

@@ -1,18 +1,10 @@
-import { Directive, HostListener, ElementRef, Renderer2, Input,Output,EventEmitter } from '@angular/core';
-import { DragDropService, DragData } from '../drag-drop.service';
-
-
-
-import  'rxjs/operators';
-import   'rxjs/add/operator/take'; //视频是这个引用,但出错
-import 'rxjs/Observable';
-import  'rxjs/add/observable/fromPromise'; //低于angular6的引用
-
-import { Observable, Subject,BehaviorSubject, asapScheduler, pipe, of, from, interval, merge, fromEvent, SubscriptionLike, PartialObserver,concat,combineLatest  } from 'rxjs';
-import { map, filter, scan,take } from 'rxjs/operators';
-import { webSocket } from 'rxjs/webSocket';
-import { ajax } from 'rxjs/ajax';
-import { TestScheduler } from 'rxjs/testing';
+import { Directive, HostListener, ElementRef, Renderer2, Input, Output, EventEmitter } from '@angular/core';
+import { Observable, Subject, BehaviorSubject, asapScheduler, pipe, of, from, interval, merge, fromEvent, SubscriptionLike, PartialObserver, concat, combineLatest } from 'rxjs';
+import { map, filter, scan, take } from 'rxjs/operators';
+// import { webSocket } from 'rxjs/webSocket';
+// import { ajax } from 'rxjs/ajax';
+// import { TestScheduler } from 'rxjs/testing';
+import { DragDropService, DragData } from 'src/app/service/dragdrop/drag-drop-service.service';
 
 
 
@@ -20,7 +12,7 @@ import { TestScheduler } from 'rxjs/testing';
   selector: '[appDrop][dropTags][dragEnterClass]'
 })
 export class DropDirective {
-@Output() dropped=new EventEmitter<DragData>();
+  @Output() dropped = new EventEmitter<DragData>();
   @Input() dragEnterClass: string;
   @Input() dropTags: string[] = [];
 
